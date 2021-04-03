@@ -1,0 +1,451 @@
+
+Button_debugger.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000278  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000003  00800100  00800100  000002ec  2**0
+                  ALLOC
+  2 .debug_aranges 00000020  00000000  00000000  000002ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 0000009d  00000000  00000000  0000030c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000181  00000000  00000000  000003a9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000000c1  00000000  00000000  0000052a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   0000023e  00000000  00000000  000005eb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000080  00000000  00000000  0000082c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000000fe  00000000  00000000  000008ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    00000068  00000000  00000000  000009aa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 4c 00 	jmp	0x98	; 0x98 <__ctors_end>
+   4:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+   8:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+   c:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  10:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  14:	0c 94 6d 00 	jmp	0xda	; 0xda <__vector_5>
+  18:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__vector_6>
+  1c:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  20:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  24:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  28:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  2c:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  30:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  34:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  38:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  3c:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  40:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  44:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  48:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  4c:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  50:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  54:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  58:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  5c:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  60:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  64:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  68:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  6c:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  70:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  74:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  78:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  7c:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  80:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  84:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  88:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  8c:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  90:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+  94:	0c 94 6b 00 	jmp	0xd6	; 0xd6 <__bad_interrupt>
+
+00000098 <__ctors_end>:
+  98:	11 24       	eor	r1, r1
+  9a:	1f be       	out	0x3f, r1	; 63
+  9c:	cf ef       	ldi	r28, 0xFF	; 255
+  9e:	d0 e2       	ldi	r29, 0x20	; 32
+  a0:	de bf       	out	0x3e, r29	; 62
+  a2:	cd bf       	out	0x3d, r28	; 61
+
+000000a4 <__do_copy_data>:
+  a4:	11 e0       	ldi	r17, 0x01	; 1
+  a6:	a0 e0       	ldi	r26, 0x00	; 0
+  a8:	b1 e0       	ldi	r27, 0x01	; 1
+  aa:	e8 e7       	ldi	r30, 0x78	; 120
+  ac:	f2 e0       	ldi	r31, 0x02	; 2
+  ae:	00 e0       	ldi	r16, 0x00	; 0
+  b0:	0b bf       	out	0x3b, r16	; 59
+  b2:	02 c0       	rjmp	.+4      	; 0xb8 <__do_copy_data+0x14>
+  b4:	07 90       	elpm	r0, Z+
+  b6:	0d 92       	st	X+, r0
+  b8:	a0 30       	cpi	r26, 0x00	; 0
+  ba:	b1 07       	cpc	r27, r17
+  bc:	d9 f7       	brne	.-10     	; 0xb4 <__do_copy_data+0x10>
+
+000000be <__do_clear_bss>:
+  be:	11 e0       	ldi	r17, 0x01	; 1
+  c0:	a0 e0       	ldi	r26, 0x00	; 0
+  c2:	b1 e0       	ldi	r27, 0x01	; 1
+  c4:	01 c0       	rjmp	.+2      	; 0xc8 <.do_clear_bss_start>
+
+000000c6 <.do_clear_bss_loop>:
+  c6:	1d 92       	st	X+, r1
+
+000000c8 <.do_clear_bss_start>:
+  c8:	a3 30       	cpi	r26, 0x03	; 3
+  ca:	b1 07       	cpc	r27, r17
+  cc:	e1 f7       	brne	.-8      	; 0xc6 <.do_clear_bss_loop>
+  ce:	0e 94 dd 00 	call	0x1ba	; 0x1ba <main>
+  d2:	0c 94 3a 01 	jmp	0x274	; 0x274 <_exit>
+
+000000d6 <__bad_interrupt>:
+  d6:	0c 94 0c 01 	jmp	0x218	; 0x218 <__vector_default>
+
+000000da <__vector_5>:
+
+
+//################## INTERRUPTS ##################
+
+ISR(INT4_vect) // Pause
+{
+  da:	1f 92       	push	r1
+  dc:	0f 92       	push	r0
+  de:	0f b6       	in	r0, 0x3f	; 63
+  e0:	0f 92       	push	r0
+  e2:	11 24       	eor	r1, r1
+  e4:	8f 93       	push	r24
+	STATE = 1;
+  e6:	81 e0       	ldi	r24, 0x01	; 1
+  e8:	80 93 00 01 	sts	0x0100, r24
+	//PORTD = 0b11000000;
+}
+  ec:	8f 91       	pop	r24
+  ee:	0f 90       	pop	r0
+  f0:	0f be       	out	0x3f, r0	; 63
+  f2:	0f 90       	pop	r0
+  f4:	1f 90       	pop	r1
+  f6:	18 95       	reti
+
+000000f8 <__vector_6>:
+
+ISR(INT5_vect) // RampDown
+{ 
+  f8:	1f 92       	push	r1
+  fa:	0f 92       	push	r0
+  fc:	0f b6       	in	r0, 0x3f	; 63
+  fe:	0f 92       	push	r0
+ 100:	11 24       	eor	r1, r1
+ 102:	8f 93       	push	r24
+	STATE = 2;
+ 104:	82 e0       	ldi	r24, 0x02	; 2
+ 106:	80 93 00 01 	sts	0x0100, r24
+	//PORTD = 0b00110000;
+}
+ 10a:	8f 91       	pop	r24
+ 10c:	0f 90       	pop	r0
+ 10e:	0f be       	out	0x3f, r0	; 63
+ 110:	0f 90       	pop	r0
+ 112:	1f 90       	pop	r1
+ 114:	18 95       	reti
+
+00000116 <mTimer>:
+}
+*/
+
+// DESC: initializes a timer lasting COUNT milliseconds
+void mTimer(int count)
+{
+ 116:	9c 01       	movw	r18, r24
+	int i;
+	i=0;
+
+	TCCR1B |=_BV(WGM12); // Timer/Counter1 Control Register B set bit WGM12 to 1 which is CTC. CTC is Clear Timer on Compare
+ 118:	80 91 81 00 	lds	r24, 0x0081
+ 11c:	88 60       	ori	r24, 0x08	; 8
+ 11e:	80 93 81 00 	sts	0x0081, r24
+	OCR1A=0x03e8; // Output Compare Register is set to 1000 decimal at 1MHz => 1 ms 
+ 122:	88 ee       	ldi	r24, 0xE8	; 232
+ 124:	93 e0       	ldi	r25, 0x03	; 3
+ 126:	90 93 89 00 	sts	0x0089, r25
+ 12a:	80 93 88 00 	sts	0x0088, r24
+	TCNT1=0x0000; // Initial Value of the Timer to 0
+ 12e:	10 92 85 00 	sts	0x0085, r1
+ 132:	10 92 84 00 	sts	0x0084, r1
+	//TIMSK1=TIMSK1 | 0b00000010; // Sets OCIE3A bit to 1 which is a timer output compare A match
+	TIFR1 |= _BV(OCF1A);
+ 136:	b1 9a       	sbi	0x16, 1	; 22
+ 138:	80 e0       	ldi	r24, 0x00	; 0
+ 13a:	90 e0       	ldi	r25, 0x00	; 0
+ 13c:	04 c0       	rjmp	.+8      	; 0x146 <mTimer+0x30>
+
+	while(i<count)
+	{
+		if ((TIFR1 & 0x02) == 0x02)
+ 13e:	b1 9b       	sbis	0x16, 1	; 22
+ 140:	fe cf       	rjmp	.-4      	; 0x13e <mTimer+0x28>
+		{
+			TIFR1 |=_BV(OCF1A);
+ 142:	b1 9a       	sbi	0x16, 1	; 22
+			i++;
+ 144:	01 96       	adiw	r24, 0x01	; 1
+	OCR1A=0x03e8; // Output Compare Register is set to 1000 decimal at 1MHz => 1 ms 
+	TCNT1=0x0000; // Initial Value of the Timer to 0
+	//TIMSK1=TIMSK1 | 0b00000010; // Sets OCIE3A bit to 1 which is a timer output compare A match
+	TIFR1 |= _BV(OCF1A);
+
+	while(i<count)
+ 146:	82 17       	cp	r24, r18
+ 148:	93 07       	cpc	r25, r19
+ 14a:	cc f3       	brlt	.-14     	; 0x13e <mTimer+0x28>
+			TIFR1 |=_BV(OCF1A);
+			i++;
+		}//end if
+	}//end while
+
+}
+ 14c:	08 95       	ret
+
+0000014e <RampDownButton>:
+
+}
+
+void RampDownButton()
+{
+	mTimer(100);
+ 14e:	84 e6       	ldi	r24, 0x64	; 100
+ 150:	90 e0       	ldi	r25, 0x00	; 0
+ 152:	0e 94 8b 00 	call	0x116	; 0x116 <mTimer>
+	PORTD = 0b00110000;
+ 156:	80 e3       	ldi	r24, 0x30	; 48
+ 158:	8b b9       	out	0x0b, r24	; 11
+
+	if(RampDown == 0)
+ 15a:	80 91 02 01 	lds	r24, 0x0102
+ 15e:	88 23       	and	r24, r24
+ 160:	21 f4       	brne	.+8      	; 0x16a <RampDownButton+0x1c>
+	{
+		RampDown = 1;
+ 162:	81 e0       	ldi	r24, 0x01	; 1
+ 164:	80 93 02 01 	sts	0x0102, r24
+ 168:	02 c0       	rjmp	.+4      	; 0x16e <RampDownButton+0x20>
+	}
+	else
+	{
+		RampDown = 0;
+ 16a:	10 92 02 01 	sts	0x0102, r1
+	}
+
+	PORTC = RampDown<<4;
+ 16e:	80 91 02 01 	lds	r24, 0x0102
+ 172:	82 95       	swap	r24
+ 174:	80 7f       	andi	r24, 0xF0	; 240
+ 176:	88 b9       	out	0x08, r24	; 8
+	mTimer(100);
+ 178:	84 e6       	ldi	r24, 0x64	; 100
+ 17a:	90 e0       	ldi	r25, 0x00	; 0
+ 17c:	0e 94 8b 00 	call	0x116	; 0x116 <mTimer>
+	STATE = 0;
+ 180:	10 92 00 01 	sts	0x0100, r1
+
+}
+ 184:	08 95       	ret
+
+00000186 <PauseButton>:
+
+//################## FUNCTIONS ##################
+
+void PauseButton()
+{
+	mTimer(100);
+ 186:	84 e6       	ldi	r24, 0x64	; 100
+ 188:	90 e0       	ldi	r25, 0x00	; 0
+ 18a:	0e 94 8b 00 	call	0x116	; 0x116 <mTimer>
+	PORTD = 0b11000000;
+ 18e:	80 ec       	ldi	r24, 0xC0	; 192
+ 190:	8b b9       	out	0x0b, r24	; 11
+
+	if(Pause == 0)
+ 192:	80 91 01 01 	lds	r24, 0x0101
+ 196:	88 23       	and	r24, r24
+ 198:	21 f4       	brne	.+8      	; 0x1a2 <PauseButton+0x1c>
+	{
+		Pause = 1;
+ 19a:	81 e0       	ldi	r24, 0x01	; 1
+ 19c:	80 93 01 01 	sts	0x0101, r24
+ 1a0:	02 c0       	rjmp	.+4      	; 0x1a6 <PauseButton+0x20>
+	}
+	else
+	{
+		Pause = 0;
+ 1a2:	10 92 01 01 	sts	0x0101, r1
+	}
+
+	PORTC = Pause;
+ 1a6:	80 91 01 01 	lds	r24, 0x0101
+ 1aa:	88 b9       	out	0x08, r24	; 8
+	mTimer(100);
+ 1ac:	84 e6       	ldi	r24, 0x64	; 100
+ 1ae:	90 e0       	ldi	r25, 0x00	; 0
+ 1b0:	0e 94 8b 00 	call	0x116	; 0x116 <mTimer>
+	STATE = 0;
+ 1b4:	10 92 00 01 	sts	0x0100, r1
+
+}
+ 1b8:	08 95       	ret
+
+000001ba <main>:
+//################## MAIN ROUTINE ##################
+int main(int argc, char *argv[])
+{
+
+	// Output Ports
+	DDRA = 0b11111111; // Signal to Stepper
+ 1ba:	9f ef       	ldi	r25, 0xFF	; 255
+ 1bc:	91 b9       	out	0x01, r25	; 1
+	DDRB = 0b10101111; // PWM Output A for Timer/Counter0 or PWM Output B for Timer/Counter1 (bit 7)
+ 1be:	8f ea       	ldi	r24, 0xAF	; 175
+ 1c0:	84 b9       	out	0x04, r24	; 4
+	DDRC = 0b11111111; // LEDs display
+ 1c2:	97 b9       	out	0x07, r25	; 7
+
+	// Input Ports
+	DDRD = 0b11110000; // External Interrupts 0 to 3 (bits 0 to 3)
+ 1c4:	80 ef       	ldi	r24, 0xF0	; 240
+ 1c6:	8a b9       	out	0x0a, r24	; 10
+	DDRE = 0b00000000; // External Interrupts 7 to 4 (bits 4 to 7)
+ 1c8:	1d b8       	out	0x0d, r1	; 13
+	DDRF = 0b00000000; // ADC Input Channel 1 (bit 1)
+ 1ca:	10 ba       	out	0x10, r1	; 16
+
+	// Timers
+	TCCR1B |=_BV(CS10); // Timer/Counter Control Register B for Timer 1, Chooses no prescaler, the frequency is 8MHz.
+ 1cc:	80 91 81 00 	lds	r24, 0x0081
+ 1d0:	81 60       	ori	r24, 0x01	; 1
+ 1d2:	80 93 81 00 	sts	0x0081, r24
+	TCCR0B |=_BV(CS01); // Timer/Counter Control Register B for Timer 0 (PWM), Chooses no prescaler, the frequency is 1 MHz.
+ 1d6:	85 b5       	in	r24, 0x25	; 37
+ 1d8:	82 60       	ori	r24, 0x02	; 2
+ 1da:	85 bd       	out	0x25, r24	; 37
+	TCCR0A |=_BV(WGM00) | _BV(WGM01); // Timer/Counter Control0 Register A for Timer 0 
+ 1dc:	84 b5       	in	r24, 0x24	; 36
+ 1de:	83 60       	ori	r24, 0x03	; 3
+ 1e0:	84 bd       	out	0x24, r24	; 36
+
+	// Interrupt Setup
+	cli();	// Disables all interrupts
+ 1e2:	f8 94       	cli
+	//EIMSK |= _BV(INT0); // Interrupt Enable PIN D0
+	//EIMSK |= _BV(INT1); // Interrupt Enable PIN D1
+	//EIMSK |= _BV(INT2); // Interrupt Enable PIN D2
+	//EIMSK |= _BV(INT3); // Interrupt Enable PIN D3
+	
+	EIMSK |= _BV(INT4); // Interrupt Enable PIN E4
+ 1e4:	ec 9a       	sbi	0x1d, 4	; 29
+	EIMSK |= _BV(INT5); // Interrupt Enable PIN E5
+ 1e6:	ed 9a       	sbi	0x1d, 5	; 29
+
+	EICRA |= _BV(ISC41); // Falling edge
+ 1e8:	80 91 69 00 	lds	r24, 0x0069
+ 1ec:	82 60       	ori	r24, 0x02	; 2
+ 1ee:	80 93 69 00 	sts	0x0069, r24
+	EICRA |= _BV(ISC51); // Falling edge
+ 1f2:	80 91 69 00 	lds	r24, 0x0069
+ 1f6:	88 60       	ori	r24, 0x08	; 8
+ 1f8:	80 93 69 00 	sts	0x0069, r24
+
+	sei();	// Note this sets the Global Enable for all interrupts
+ 1fc:	78 94       	sei
+
+
+	while (1)
+	{
+		switch(STATE)
+ 1fe:	80 91 00 01 	lds	r24, 0x0100
+ 202:	81 30       	cpi	r24, 0x01	; 1
+ 204:	19 f0       	breq	.+6      	; 0x20c <main+0x52>
+ 206:	82 30       	cpi	r24, 0x02	; 2
+ 208:	d1 f7       	brne	.-12     	; 0x1fe <main+0x44>
+ 20a:	03 c0       	rjmp	.+6      	; 0x212 <main+0x58>
+		{
+			case (0) :
+				//TurnStepper();
+				break;
+			case (1) :
+				PauseButton();
+ 20c:	0e 94 c3 00 	call	0x186	; 0x186 <PauseButton>
+ 210:	f6 cf       	rjmp	.-20     	; 0x1fe <main+0x44>
+				break;		
+			case (2) :
+				RampDownButton();
+ 212:	0e 94 a7 00 	call	0x14e	; 0x14e <RampDownButton>
+ 216:	f3 cf       	rjmp	.-26     	; 0x1fe <main+0x44>
+
+00000218 <__vector_default>:
+	//PORTD = 0b00110000;
+}
+
+
+ISR(BADISR_vect)
+{
+ 218:	1f 92       	push	r1
+ 21a:	0f 92       	push	r0
+ 21c:	0f b6       	in	r0, 0x3f	; 63
+ 21e:	0f 92       	push	r0
+ 220:	0b b6       	in	r0, 0x3b	; 59
+ 222:	0f 92       	push	r0
+ 224:	11 24       	eor	r1, r1
+ 226:	2f 93       	push	r18
+ 228:	3f 93       	push	r19
+ 22a:	4f 93       	push	r20
+ 22c:	5f 93       	push	r21
+ 22e:	6f 93       	push	r22
+ 230:	7f 93       	push	r23
+ 232:	8f 93       	push	r24
+ 234:	9f 93       	push	r25
+ 236:	af 93       	push	r26
+ 238:	bf 93       	push	r27
+ 23a:	ef 93       	push	r30
+ 23c:	ff 93       	push	r31
+	PORTC = 0b11111111;
+ 23e:	8f ef       	ldi	r24, 0xFF	; 255
+ 240:	88 b9       	out	0x08, r24	; 8
+	PORTD = 0b11110000;	
+ 242:	80 ef       	ldi	r24, 0xF0	; 240
+ 244:	8b b9       	out	0x0b, r24	; 11
+	mTimer(50000);
+ 246:	80 e5       	ldi	r24, 0x50	; 80
+ 248:	93 ec       	ldi	r25, 0xC3	; 195
+ 24a:	0e 94 8b 00 	call	0x116	; 0x116 <mTimer>
+}
+ 24e:	ff 91       	pop	r31
+ 250:	ef 91       	pop	r30
+ 252:	bf 91       	pop	r27
+ 254:	af 91       	pop	r26
+ 256:	9f 91       	pop	r25
+ 258:	8f 91       	pop	r24
+ 25a:	7f 91       	pop	r23
+ 25c:	6f 91       	pop	r22
+ 25e:	5f 91       	pop	r21
+ 260:	4f 91       	pop	r20
+ 262:	3f 91       	pop	r19
+ 264:	2f 91       	pop	r18
+ 266:	0f 90       	pop	r0
+ 268:	0b be       	out	0x3b, r0	; 59
+ 26a:	0f 90       	pop	r0
+ 26c:	0f be       	out	0x3f, r0	; 63
+ 26e:	0f 90       	pop	r0
+ 270:	1f 90       	pop	r1
+ 272:	18 95       	reti
+
+00000274 <_exit>:
+ 274:	f8 94       	cli
+
+00000276 <__stop_program>:
+ 276:	ff cf       	rjmp	.-2      	; 0x276 <__stop_program>
